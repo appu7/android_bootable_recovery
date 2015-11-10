@@ -606,7 +606,8 @@ include $(LOCAL_PATH)/tests/Android.mk \
     $(LOCAL_PATH)/otafault/Android.mk \
     $(LOCAL_PATH)/updater/Android.mk \
     $(LOCAL_PATH)/update_verifier/Android.mk \
-    $(LOCAL_PATH)/applypatch/Android.mk
+    $(LOCAL_PATH)/applypatch/Android.mk \
+    $(LOCAL_PATH)/fstools/Android.mk
 
 ifeq ($(wildcard system/core/uncrypt/Android.mk),)
     include $(commands_recovery_local_path)/uncrypt/Android.mk
