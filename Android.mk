@@ -68,10 +68,6 @@ LOCAL_MODULE := recovery
 
 #LOCAL_FORCE_STATIC_EXECUTABLE := true
 
-#ifeq ($(HOST_OS),linux)
-#LOCAL_REQUIRED_MODULES := mkfs.f2fs
-#endif
-
 RECOVERY_API_VERSION := 3
 RECOVERY_FSTAB_VERSION := 2
 LOCAL_CFLAGS += -DRECOVERY_API_VERSION=$(RECOVERY_API_VERSION)
@@ -438,13 +434,6 @@ else
         ntfs-3g \
         ntfsfix \
         mkntfs
-endif
-endif
-ifeq ($(TARGET_USERIMAGES_USE_F2FS), true)
-ifeq ($(shell test $(CM_PLATFORM_SDK_VERSION) -ge 3; echo $$?),0)
-    LOCAL_ADDITIONAL_DEPENDENCIES += \
-        fsck.f2fs \
-        mkfs.f2fs
 endif
 endif
 
